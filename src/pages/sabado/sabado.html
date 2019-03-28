@@ -1,0 +1,89 @@
+<!--
+  Generated template for the LunesViernesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="header" >
+  <ion-navbar color="dark">
+    <ion-title>RUTAS SABADOS</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="index">
+  <ion-list style="margin-top:10%;">
+    <ion-item>
+      <ion-label>SALIDA</ion-label>
+        <ion-select [(ngModel)]="ida" (ionChange)="onChange(ida.value)" placeholder="SELECCIONA LUGAR DE SALIDA">
+          <ion-option (click)="onChange()" value="celaya">
+            CELAYA
+          </ion-option>
+          <ion-option value="cortazar">
+            CORTAZAR
+          </ion-option>
+          <ion-option value="villagran">
+            VILLAGRÁN
+          </ion-option>
+          <ion-option value="upg">
+             UPG
+          </ion-option>
+        </ion-select>
+    </ion-item>
+
+    <div style="margin-top:2%" id="regreso" *ngIf="ida==('upg')">
+      <div *ngIf="ida==('upg')">
+        <ion-list>
+          <ion-item>
+            <ion-label>REGRESO</ion-label>
+            <ion-select [(ngModel)]="regresos" (ionChange)="onRegresos(regresos.value)" placeholder="SELECCIONA LUGAR DE REGRESO">
+              <ion-option value="rcelaya">CELAYA</ion-option>
+              <ion-option value="rcortazar">CORTAZAR</ion-option>
+              <ion-option value="rvillagran">VILLAGRAN</ion-option>
+            </ion-select>  
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+
+        
+    <ion-item style="margin-top: 5%">
+      <ion-label>HORARIOS</ion-label>
+      <ion-select [(ngModel)]="horarios"  multiple="false" placeholder="SELECCIONA UN HORARIO">
+        <ion-option *ngFor="let item of items" [value]="item.horario_salida">{{item.horario_salida}}</ion-option>
+      </ion-select>
+   
+    </ion-item>
+    <div *ngIf="ida==('upg')">
+      <div *ngIf="ida==('upg')">
+        <strong><p style="color:white;text-align: center;">*Todas las salidas son frente las instalaciones de la universidad</p></strong>
+      </div>
+    </div>
+    <div *ngIf="ida==('celaya')">
+      <div *ngIf="ida==('celaya')">
+        <strong><p style="color:white;text-align: center;">*Todas las salidas son en las instalaciones de central de autobuses de Celaya</p></strong>
+      </div>
+    </div>
+
+    <div *ngIf="ida==('cortazar')">
+      <div *ngIf="ida==('cortazar')">
+        <strong><p style="color:white;text-align: center;">*Todas las salidas son en las instalaciones de central de autobuses de Cortazar</p></strong>
+      </div>
+    </div>
+
+    <div *ngIf="ida==('villagran')">
+      <div *ngIf="ida==('villagran')">
+        <strong><p style="color:white;text-align: center;">*Todas las salidas son en las instalaciones de central de autobuses de Villagran</p></strong>
+      </div>
+    </div>
+
+</ion-list>
+  <div #map id="map" style="background-color: rgba(0, 0, 0, 0.221);width: 100%;height: 50%;">
+  
+  </div>
+
+  <div class="rigth">
+      <ion-card style="background-color: transparent" (click)="help()">
+          <img src="../../assets/img/sos.png"/>
+  </ion-card>
+ </div> 
+</ion-content>

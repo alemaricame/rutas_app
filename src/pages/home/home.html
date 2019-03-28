@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>
+      RUTAS Y HORARIOS
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="index">
+        <div class="rigth">
+            <ion-card style="background-color: transparent" (click)="help()">
+                <img src="../../assets/img/sos.png"/>
+            </ion-card>
+        </div>
+    <div class="index">
+    <div class="espacio"></div>
+      <ion-card (click)="horario1()" class="ion-card">
+        <img src="../../assets/img/bus-96.png"/>
+        <ion-card-content>
+          <ion-card-title>
+            LUNES - VIERNES
+          </ion-card-title>
+        </ion-card-content>
+      </ion-card>
+    
+      <ion-card (click)="horario2()" class="ion-card">
+          <img src="../../assets/img/bus2-96.png"/>
+          <ion-card-content>
+            <ion-card-title>
+              SABATINAS
+            </ion-card-title>
+            </ion-card-content>
+      </ion-card>
+  
+      <ion-card (click)="avisos()" class="ion-card">
+          <img src="../../assets/img/notepad.png"/>
+           <ion-card-title>AVISOS</ion-card-title>
+      </ion-card>
+    </div>
+  </ion-content>
